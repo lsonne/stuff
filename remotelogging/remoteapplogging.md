@@ -1,7 +1,7 @@
 # Cloud Logging, the perfect fit for mobile apps
 
 During development of your app you have full control over what's happening in your code.
-You have the debugger, console logging, performance profiling etc.
+You have the debugger, you have console logging, performance profiling etc.
 After you have released your app, you have almost no tools for checking how your app
 behaves in the wild. In most cases, the feedback you get come from emails to your
 support address, App Store reviews and crash reporting (if you chose to include
