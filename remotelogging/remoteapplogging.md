@@ -31,6 +31,7 @@ A little over a year ago, I became interested in using one of the cloud logging 
 no iOS client libs available from any of the logging services themselves. I couldn't even find any open sourced libs on Github.
 I decided to write a library myself. I chose to integrate against Loggly, because they have an excellent REST API for remote logging. First, I wrote an Objective-C library, which extends the amazing iOS logging framework [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack). The library formats and sends logs to Loggly. You can get the library at [LogglyLogger-CocoaLumberjack](https://github.com/melke/LogglyLogger-CocoaLumberjack).
 Recently, I also wrote a minimalistic logging framework in Swift, that can be used for console logging only, or for uploading logs to Loggly, or both. The Swift framework is available at [SlimLogger](https://github.com/melke/SlimLogger).
+(If you prefer another cloud logging service than Loggly, please contribute to SlimLogger by adding a class, `SlimYourFavoriteServiceDestination` that implements the SlimLogger protocol `LogDestination`. You can have a look in `SlimLogglyDestination.swift` to see how it can be done.)
 
 Here, I will briefly describe how to do cloud logging using SlimLogger in a Swift iOS app.
 
