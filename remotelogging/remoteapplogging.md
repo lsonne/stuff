@@ -1,6 +1,6 @@
 # Cloud Logging, the perfect fit for mobile apps
 
-During development of your app you have full control over what's happening in your code.
+During development of your mobile app, you have full control over what's happening in your code.
 You have the debugger, you have console logging, performance profiling etc.
 After you have released your app, you have almost no tools for checking how your app
 behaves in the wild. In most cases, the feedback you get come from emails to your
@@ -18,6 +18,7 @@ in the vast amount of logs that your users will create?
 **Enter Cloud Logging services.**
 
 Cloud logging services is a [short explanation of what cloud services is]
+Suggestion of definition from Linda: capture logs from a wide variety of sources—applications, platforms, and systems—and provide search and analysis tools that give you insight from this data, so that you can troubleshoot operational issues. 
 
 There are many players in the cloud logging market: [Splunk](http://www.splunk.com/), [Sumo Logic](https://www.sumologic.com/), [Loggly](https://www.loggly.com/) etc. Some of these are free up to a certain level of data volumes and retention periods. There are also open source log management systems that work the same way, but you will need to host the servers yourself.
 An example of this is [Logstash](https://www.elastic.co/products/logstash) in combination with [Kibana](https://www.elastic.co/products/kibana) or [Graphite](http://graphite.wikidot.com/).
@@ -129,7 +130,7 @@ That is all there is to it. The log posts will include your log message plus som
 
 ##Structured log messages
 
-You can log any type that implements Printable, but if you want a better search experience in the Loggly UI, you should log a type that can be casted to an NSDictionary. If you do that, all dictionary keys will be logged as separate keys
+You can log any type that implements Printable, but if you want a better search and analysis experience in the Loggly UI, you should log a type that can be casted to an NSDictionary. If you do that, all dictionary keys will be logged as separate keys
 in Loggly. This makes it much easier to do filtered and faceted field searches in Loggly.
 Word of warning, don't use too many different keys, it will make it harder to get a good overlook of your data
 in the Loggly UI. Also, Loggly will not log more that 100 distinct keys for free accounts. Figure out smart keys that you can reuse in many of your log statements.
@@ -169,11 +170,14 @@ data for that particular log statement.
 ###Find common errors
 You can do aggregated searches in Loggly where you quickly can see the most common errors, warnings etc. [some more info about this?...]
 
+LS: yes, that would be great. Maybe a screen shot? I have some sample data that's e-commerce oriented but nothing that's tailored to apps. 
+
 ###Alarms
 
 In most cloud logging services, including Loggly, you can setup alarms for lots of different things. The most simple alarm condition would be if
 the number of errors during a certain period of time rises above zero, or some other acceptable level of error count. You can also
 be more specific, for example raising alarms whenever an In-App Purchase fails in your app.  
+
 
 ###Troubleshoot a session or a user
 
@@ -192,6 +196,10 @@ set it's loglevel in the SlimLogglyConfig dynamically. Pretty nice, huh?
 If you want your logs to be anonymized, you could use the sessionid that SlimLogger generates. This is useful when you want
 to see all log messages from a certain session. It could also be combined with a secret button where the user can see the sessionid and
 send it to the person trobleshooting the issue.
+
+###Monitor New Releases
+Mats, you might want to add this use case.. you can see details in a case study we did with Rumble Entertainment. Basically, monitoring error rates when a new release goes live. Link here:
+https://www.loggly.com/wp-content/uploads/2014/03/Loggly-CS-Rumble-Ent-Web.pdf
 
 ## Summary
 
